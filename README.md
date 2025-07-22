@@ -14,6 +14,15 @@ An AI-powered FastAPI application that answers natural language questions about 
 - 📊 Supports extensions like visual output (chart.js or matplotlib)
 
 ---
+## 🧪 Example Questions
+
+Here are some questions you can ask:
+
+- 🛒 "How many products are in the table?"
+- 💸 "What is the average price of all products?"
+- 📦 "List all products with stock less than 10."
+- 📊 "Which category has the highest number of products?"
+
 
 ## 📂 Project Structure
 
