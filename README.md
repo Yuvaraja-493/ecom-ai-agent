@@ -22,6 +22,10 @@ Here are some questions you can ask:
 - 💸 "What is the average price of all products?"
 - 📦 "List all products with stock less than 10."
 - 📊 "Which category has the highest number of products?"
+## 🖼️ Screenshots
+
+### 🔹 Postman: Asking “How many products are in the table?”
+![Postman Screenshot](assets/postman-query.png)
 
 
 ## 📂 Project Structure
