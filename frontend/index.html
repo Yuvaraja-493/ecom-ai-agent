@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ecom AI Agent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #chartImage {
+            max-width: 600px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Ask a Question about your E-commerce Data</h1>
+    <input type="text" id="question" placeholder="e.g., Show revenue by category" size="50">
+    <button onclick="askQuestion()">Ask</button>
+
+    <h3>Answer:</h3>
+    <pre id="resultBox">...</pre>
+
+    <h3>Chart:</h3>
+    <img id="chartImage" src="">
+    
+    <script>
+        async function askQuestion() {
+            const question = document.getElementById("question").value;
+            const response = await fetch("/ask", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ question })
+            });
+
+            const data = await response.json();
+            document.getElementById("resultBox").innerText = JSON.stringify(data.result, null, 2);
+
+            if (data.chart_base64) {
+                document.getElementById("chartImage").src = `data:image/png;base64,${data.chart_base64}`;
+            } else {
+                document.getElementById("chartImage").src = "";
+            }
+        }
+    </script>
+</body>
+</html>
